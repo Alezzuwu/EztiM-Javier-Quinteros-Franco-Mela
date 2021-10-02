@@ -1,0 +1,77 @@
+<ion-header>
+</ion-header>
+
+<ion-content color="estimbk">
+
+  <!--Carta perfil-->
+<ion-card color="estim" class="cardperfil shadow">
+  <ion-grid fixed>
+    <ion-row class="ion-text-center">
+      <ion-col size="12">xoro ale</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="5">
+        <ion-img src="https://bolavip.com/__export/1577912996106/sites/bolavip/img/2020/01/01/fakert1_crop1577912711947.jpg_1159711837.jpg"></ion-img>
+      </ion-col>
+      <ion-col size="7">
+        <ion-card-content >
+          Nombre: Javier Quinteros
+        </ion-card-content>
+
+        <ion-card-content>
+          tipo usuario: Admin
+        </ion-card-content>
+        
+        <ion-card-content>
+          Correo: ja.quinterosg@duocuc.cl
+        </ion-card-content>
+
+        <ion-card-content>
+          Telefono : +56 9 2003 0623
+        </ion-card-content>
+    
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+<ion-button (click)="presentConfirm()" expand="block" fill="clear" shape="round" color="btn">
+  Cerrar sesion
+</ion-button>
+<!-- Menu de opciones-->
+
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="6">
+      <ion-card class="cardcustom">
+        <ion-item color="estim" [routerLink]="['/inicio/perfil/agregar']">
+          <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+          <ion-label>Agregar</ion-label>
+        </ion-item>
+      </ion-card>
+
+      <ion-card class="cardcustom">
+        <ion-item color="estim" [routerLink]="['/inicio/perfil/eliminar']">
+          <ion-icon name="trash-outline" slot="start"></ion-icon>
+          <ion-label>Eliminar juego</ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-card class="cardcustom">
+        <ion-item color="estim" [routerLink]="['/inicio/perfil/modificar']">
+          <ion-icon name="hammer-outline" slot="start"></ion-icon>
+          <ion-label>Modificar juego</ion-label>
+        </ion-item>
+      </ion-card>
+
+      <ion-card class="cardcustom">
+        <ion-item color="estim" [routerLink]="['/inicio/catalogo']">
+          <ion-icon name="list-outline" slot="start"></ion-icon>
+          <ion-label>Lista de juegos</ion-label>
+        </ion-item>
+      </ion-card>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

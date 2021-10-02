@@ -1,0 +1,140 @@
+<ion-content [fullscreen]="true" color="estimbk">
+
+  <ion-slides mode="md" pager="md" class="ion-padding">
+
+    <ion-slide >
+      <ion-grid>
+        <ion-row> 
+          <ion-col >
+            <ion-img src="https://images.vexels.com/media/users/3/215362/isolated/preview/a6dd4f9230854a93264fbdc8d35511cf-controlador-de-juegos-joystick-plano.png" class="customimg"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h1>EztiM</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h4>Tu Tienda de juegos de confianza</h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid>
+        <ion-row> 
+          <ion-col >
+            <ion-img src="https://images.vexels.com/media/users/3/215376/isolated/preview/8c721ac5e8d1571dc8b281b927fdf5a2-videojuego-joystick-joystick-plano.png" class="customimg"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h1>Retrocompatibilidad</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h4>Juega a tus juegos favoritos sin importar su plataforma, en EzteaM todo es compatible!!</h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid>
+        <ion-row> 
+          <ion-col >
+            <ion-img src="https://txproapp.com/wp-content/uploads/2020/08/teamx.portafolio.ecommerce.png" class="customimg"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h1>Compra tus juegos al mejor precio</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h4>Compra tus juegos favoritos a un menor precio con nuestras ofertas!!</h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid>
+        <ion-row> 
+          <ion-col >
+            <ion-img src="https://content.app-sources.com/s/58989533766126221/uploads/Images/3Pod-marketing-digiatl-servicios-icono-website-constructor-builder-9007300.png" class="customimg"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h1>Facil de navegar</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h4>En nuestra aplicacion encontraras todo lo que quieras ya que tenemos una interfas muy amigable y eficaz</h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+  <!--Formulario Log In-->
+
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-grid>
+      
+      <ion-row class="ion-padding">
+        <ion-col size="12">
+          
+          <ion-item class="custominput" color="estim">
+            <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+            <ion-label position="floating">Usuario <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input name="user" type="text" placeholder="Nombre de usuario" ngModel required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding">
+        <ion-col size="12">
+          <ion-item class="custominput" color="estim">
+            <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+            <ion-label position="floating">Contraseña <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input name="password" type="password" placeholder="Contraseña" ngModel required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding">
+        <ion-col size="12" class="ion-text-center">
+          <ion-button block color="btn" type="submit" [disabled]="form.invalid">
+            Iniciar Sesion
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <ion-button (click)="login()" expand="block" fill="clear" shape="round">
+      ¿Olvidaste tu contraseña?
+    </ion-button>
+  </form>
+</ion-content>
+
+
+<!--Footer
+<ion-footer class="ion-no-border" slot="bottom" class="ion-text-center" > 
+  <ion-toolbar>
+    <ion-title>EztiM</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>-->

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center" color="estimheader">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{datos.nombre}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentConfirm()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center" color="estimbk">
+
+  <ion-card color="estim">
+    <ion-img class="portadaimg" [src]="datos.imagenURL"></ion-img>
+    <ion-card-content>
+      Fecha de lanzamiento: {{datos.fecha_lanzamiento}}
+    </ion-card-content>
+    <ion-card-content>
+      Desarrollador: {{datos.desarrollador}}
+    </ion-card-content>
+    <ion-card-content>
+      Categoria: {{datos.categoria}}
+    </ion-card-content>
+    <ion-card-content>
+      Precio: ${{datos.precio}} CLP
+    </ion-card-content>
+    <ion-card-content>
+      Precio en Dolares: {{datos.precioDolar}}$ USD
+    </ion-card-content>
+    <ion-card-content *ngIf=" datos.multi == true ; else elseBlock">
+      Multijugador: Si
+    </ion-card-content>
+    <ng-template #elseBlock>
+      <ion-card-content>
+        Multijugador: No
+      </ion-card-content>
+    </ng-template>
+  </ion-card>
+
+  <h1 class="titulo">Comentarios</h1>
+  <ion-row>
+    <ion-col>
+       <ion-list *ngIf=" datos.comentario && datos.comentario.length > 0; else sinComentario" >
+         <ion-item *ngFor="let com of datos.comentario">
+           {{com}}
+         </ion-item>
+       </ion-list>     
+
+       <!-- ngTemplate: es un segmento de codigo que aparece bajo una condicion-->
+       <ng-template #sinComentario>
+         <ion-text>
+           <p class="ion-text-center">Sin comentarios</p>
+         </ion-text>
+       </ng-template>
+
+    </ion-col>
+  </ion-row>
+
+</ion-content>

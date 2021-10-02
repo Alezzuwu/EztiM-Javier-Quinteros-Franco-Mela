@@ -1,0 +1,30 @@
+<ion-header >
+
+  <ion-toolbar color="estimheader" class="ion-text-center">
+    <ion-title>catalogo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="estimbk" class="ion-text-center">
+  <ion-searchbar placeholder="Buscar" animated (ionChange)="buscar($event)"></ion-searchbar>
+  <h1 class="titulo">Juegos populares</h1>
+<ion-slides mode="md" pager="md" [options]='slideOpts'>
+  <ion-slide  *ngFor="let p of productos" [routerLink]="['/inicio/' + p.id]">
+    <ion-img class="shadow slideimg"  [src]="p.imagenURL"></ion-img>
+  </ion-slide>
+</ion-slides>
+
+<h1 class="titulo">Listado de Juegos</h1>
+
+
+<ion-list class="ion-margin-end ion-margin-start" style="background-color: #111124;">
+  <ion-item color="estim" class=" radius shadow ion-margin-bottom" *ngFor="let p of searchProducto" [routerLink]="['/inicio/' + p.id]">
+    <ion-thumbnail class="ion-margin-end">
+      <img [src]="p.imagenURL" />
+    </ion-thumbnail>
+    <ion-label class="ion-text-wrap">{{p.nombre}}</ion-label>
+    <ion-label slot="end" class="ion-margin-end">${{p.precio}} CLP</ion-label>
+  </ion-item>
+</ion-list>
+
+</ion-content>

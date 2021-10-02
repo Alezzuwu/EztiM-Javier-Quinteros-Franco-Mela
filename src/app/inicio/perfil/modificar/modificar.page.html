@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center" color="estimheader">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mofidicar videojuego</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="estimbk">
+
+  <ion-row>
+    <ion-col>
+      <ion-card color="estim">
+        <ion-card-content>
+          <ion-input type="text" placeholder="Ingrese el nombre" #nombre></ion-input>
+          <ion-input type="text" placeholder="Ingrese la fecha de estreno del videojuego" #fecha></ion-input>
+          <ion-input type="text" placeholder="Ingrese el desarrollador del videojuego" #desarrollador></ion-input>
+          <ion-input type="text" placeholder="Ingrese la categoria" #categoria></ion-input>
+          <ion-input type="number" placeholder="Ingrese el precio" #precio></ion-input>
+          <ion-input type="number" placeholder="Ingrese el precio en dolares" #precioDolar></ion-input>
+          <ion-item color="estim">
+            <ion-label>¿El juego es multijugador?</ion-label>
+            <ion-checkbox slot="start" ></ion-checkbox>
+          </ion-item>
+          <ion-input type="text" placeholder="Ingrese la URL de la imagen" #imagen></ion-input>
+          <ion-input type="text" placeholder="Ingrese un comentario" #comentario></ion-input>
+          <ion-button class="shadow" color="btn" (click)="agregarProducto(nombre,fecha,desarrollador,categoria,precio,precioDolar,multi,imagen,comentario)">Modificar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

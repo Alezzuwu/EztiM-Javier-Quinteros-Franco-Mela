@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="estimheader">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio/perfil"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Eliminar juegos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="estimbk" class="ion-text-center">
+
+  <h1 class="titulo">Eliminar</h1>
+
+  <ion-list class="ion-margin-end ion-margin-start" style="background-color: #111124;">
+    <ion-item color="estim" class=" radius shadow ion-margin-bottom" *ngFor="let p of productos">
+      <ion-thumbnail class="ion-margin-end">
+        <img [src]="p.imagenURL" />
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">{{p.nombre}}</ion-label>
+      <ion-label slot="end" class="ion-margin-end">${{p.precio}} CLP</ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="eliminar()">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
