@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: ModificarPage
+  },
+  {
+    path: 'modificar-a',
+    loadChildren: () => import('./modificar-a/modificar-a.module').then( m => m.ModificarAPageModule)
   }
+
 ];
 
 @NgModule({

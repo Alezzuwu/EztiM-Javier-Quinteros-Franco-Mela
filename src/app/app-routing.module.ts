@@ -21,6 +21,14 @@ const routes: Routes = [
       {
         path:":prodID",
         loadChildren: () => import('./inicio/catalogo/detalle/detalle.module').then( m => m.DetallePageModule)
+      },
+      {
+        path:":prodID",
+        loadChildren: () => import('./inicio/perfil/eliminar/eliminar.module').then( m => m.EliminarPageModule)
+      },
+      {
+        path:":prodID",
+        loadChildren: () => import('./inicio/perfil/modificar/modificar-a/modificar-a.module').then( m => m.ModificarAPageModule)
       }
     ]
     

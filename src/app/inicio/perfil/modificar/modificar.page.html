@@ -1,34 +1,24 @@
 <ion-header>
-  <ion-toolbar class="ion-text-center" color="estimheader">
+  <ion-toolbar color="estimheader">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/inicio/perfil"></ion-back-button>
     </ion-buttons>
-    <ion-title>Mofidicar videojuego</ion-title>
+    <ion-title>Modificar Juegos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="estimbk">
+<ion-content color="estimbk" class="ion-text-center">
 
-  <ion-row>
-    <ion-col>
-      <ion-card color="estim">
-        <ion-card-content>
-          <ion-input type="text" placeholder="Ingrese el nombre" #nombre></ion-input>
-          <ion-input type="text" placeholder="Ingrese la fecha de estreno del videojuego" #fecha></ion-input>
-          <ion-input type="text" placeholder="Ingrese el desarrollador del videojuego" #desarrollador></ion-input>
-          <ion-input type="text" placeholder="Ingrese la categoria" #categoria></ion-input>
-          <ion-input type="number" placeholder="Ingrese el precio" #precio></ion-input>
-          <ion-input type="number" placeholder="Ingrese el precio en dolares" #precioDolar></ion-input>
-          <ion-item color="estim">
-            <ion-label>¿El juego es multijugador?</ion-label>
-            <ion-checkbox slot="start" ></ion-checkbox>
-          </ion-item>
-          <ion-input type="text" placeholder="Ingrese la URL de la imagen" #imagen></ion-input>
-          <ion-input type="text" placeholder="Ingrese un comentario" #comentario></ion-input>
-          <ion-button class="shadow" color="btn" (click)="agregarProducto(nombre,fecha,desarrollador,categoria,precio,precioDolar,multi,imagen,comentario)">Modificar</ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
+  <h1 class="titulo">Modificar</h1>
+
+  <ion-list class="ion-margin-end ion-margin-start" style="background-color: #111124;">
+    <ion-item color="estim" class=" radius shadow ion-margin-bottom" *ngFor="let p of productos" [routerLink]="['./modificar-a/' + p.id]">
+      <ion-thumbnail class="ion-margin-end">
+        <img [src]="p.imagenURL" />
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">{{p.nombre}}</ion-label>
+      <ion-label slot="end" class="ion-margin-end">${{p.precio}} CLP</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

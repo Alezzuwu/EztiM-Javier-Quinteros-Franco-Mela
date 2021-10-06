@@ -10,7 +10,7 @@ import { InicioService } from '../../inicio.service';
 })
 export class EliminarPage implements OnInit {
 
-  private productos =[]
+  private productos = []
   datos : producto;
 
   constructor( private inicioservicio : InicioService, private route : Router) { }
@@ -19,11 +19,12 @@ export class EliminarPage implements OnInit {
     this.productos = this.inicioservicio.getProductos();
   }
 
-  eliminar(){
-    console.log("eliminado")
+  eliminar(idd : string){
+    this.datos = this.inicioservicio.getProductosById(idd)
     this.inicioservicio.deleteProducto(this.datos.id)
+    console.log("eliminado")
     //redireccionar a la pagina de productos
-    this.route.navigate(['/inicio/perfil/eliminar']);
+    this.route.navigate(['/inicio/perfil/']);
 
   }
 
