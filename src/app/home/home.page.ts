@@ -19,6 +19,7 @@ export class HomePage {
 
     if (user == 'admin' && password == 'admin') {
       this.router.navigate(['/inicio/perfil']);
+      localStorage.setItem("datosUsuario", user)
     } else {
       const alert = await this.alertC.create({
         cssClass: 'my-custom-class',

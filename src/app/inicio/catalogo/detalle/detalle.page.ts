@@ -47,7 +47,7 @@ export class DetallePage implements OnInit {
           handler: () => {
             this.inicioservicio.deleteProducto(this.datos.id);
          
-            this.route.navigate(['/inicio/catalogo']);
+            this.route.navigate(['/inicio/perfil/eliminar']);
             
           }
         }
