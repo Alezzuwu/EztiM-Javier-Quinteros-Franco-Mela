@@ -17,7 +17,7 @@ const routes: Routes = [
           },
           {
             path: 'modificar-a',
-            loadChildren: () => import('./perfil/modificar/modificar-a/modificar-a.module').then( m => m.ModificarAPageModule)
+            loadChildren: () => import('./perfil/modificar/modificar-a/modificar-a.module').then(m => m.ModificarAPageModule)
           }
         ]
       },
@@ -30,13 +30,13 @@ const routes: Routes = [
           },
           {
             path: 'detalle',
-            loadChildren: () => import('./catalogo/detalle/detalle.module').then( m => m.DetallePageModule)
+            loadChildren: () => import('./catalogo/detalle/detalle.module').then(m => m.DetallePageModule)
           },
         ]
       },
-      
+
     ]
-  }, 
+  },
 
 ];
 
