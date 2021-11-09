@@ -9,12 +9,15 @@ import { InicioService } from '../../inicio.service';
 })
 export class ModificarPage implements OnInit {
 
-  private productos =[]
+  private productos: any = []
 
-  constructor(private inicioServicio : InicioService, private route : Router) { }
+  constructor(private inicioServicio: InicioService, private route: Router) { }
 
   ngOnInit() {
-    this.productos = this.inicioServicio.getProductos()
+    this.inicioServicio.getProductos().subscribe(
+      (resp) => { this.productos = resp },
+      (err) => { console.log(err) }
+    )
   }
 
   redireccionar() {

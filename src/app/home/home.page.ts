@@ -11,7 +11,9 @@ export class HomePage {
 
   constructor( private router : Router, private alertC : AlertController) {}
 
-
+  ngOnInit() {
+    
+  }
   async login(form){
 
     var user= form.value["user"];

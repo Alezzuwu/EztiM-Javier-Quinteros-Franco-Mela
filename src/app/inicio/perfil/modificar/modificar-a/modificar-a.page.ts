@@ -10,21 +10,24 @@ import { InicioService } from 'src/app/inicio/inicio.service';
 })
 export class ModificarAPage implements OnInit {
 
-  datos : producto;
+  productos: any = [];
 
-  constructor(private activatedRoute : ActivatedRoute, private inicioServicio : InicioService, private router : Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private inicioServicio: InicioService, private router: Router) { }
 
   ngOnInit() {
 
-    this.activatedRoute.paramMap.subscribe( paraMap => { 
+    this.activatedRoute.paramMap.subscribe(paraMap => {
 
       //vamos a capturar el id que esta en la url
       const valor = paraMap.get('prodID')
 
       //llamamos al servicio y le pasamos el id
-      this.datos = this.inicioServicio.getProductosById(valor)
+      this.inicioServicio.getProductosById(valor).subscribe(
+        (resp) => { this.productos = resp },
+        (err) => { console.log(err) }
+      )
 
-    } )
+    })
   }
 
 }

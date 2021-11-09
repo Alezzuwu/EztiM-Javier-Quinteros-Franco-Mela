@@ -12,7 +12,7 @@ import { NavController } from '@ionic/angular';
 })
 export class DetallePage implements OnInit {
 
-  datos : producto;
+  producto: any = [];
 
   constructor(private alertCtrl: AlertController, private activateRoute : ActivatedRoute, private inicioservicio : InicioService, private route : Router) { }
 
@@ -24,7 +24,10 @@ export class DetallePage implements OnInit {
       const valor = paraMap.get('prodID')
 
       //llamamos al servicio y le pasamos el id
-      this.datos = this.inicioservicio.getProductosById(valor)
+      this.inicioservicio.getProductosById(valor).subscribe(
+        (resp) => { this.producto = resp },
+        (err) => { console.log(err) }
+      )
 
     } )
   }
@@ -32,7 +35,7 @@ export class DetallePage implements OnInit {
 
   async presentConfirm() {
     let alert = await this.alertCtrl.create({
-      header: 'Estas a punto de eliminar ' + this.datos.nombre,
+      header: 'Estas a punto de eliminar ' + this.producto.nombre,
       message: 'Quieres eliminarlo?',
       buttons: [
         {
@@ -45,7 +48,7 @@ export class DetallePage implements OnInit {
         {
           text: 'Eliminar',
           handler: () => {
-            this.inicioservicio.deleteProducto(this.datos.id);
+            this.inicioservicio.deleteProducto(this.producto.id);
          
             this.route.navigate(['/inicio/perfil/eliminar']);
             

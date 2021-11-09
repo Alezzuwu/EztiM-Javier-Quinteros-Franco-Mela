@@ -10,18 +10,26 @@ import { InicioService } from '../../inicio.service';
 })
 export class EliminarPage implements OnInit {
 
-  private productos = []
-  datos : producto;
+  private productos: any = []
+  producto: any = [];
 
-  constructor( private inicioservicio : InicioService, private route : Router) { }
+  constructor(private inicioservicio: InicioService, private route: Router) { }
 
   ngOnInit() {
-    this.productos = this.inicioservicio.getProductos();
+    this.inicioservicio.getProductos().subscribe(
+      (resp) => { this.productos = resp },
+      (err) => { console.log(err) }
+    )
   }
 
-  eliminar(idd : string){
-    this.datos = this.inicioservicio.getProductosById(idd)
-    this.inicioservicio.deleteProducto(this.datos.id)
+  eliminar(idd: string) {
+    this.inicioservicio.deleteProducto(this.producto.id).subscribe(
+      (resp) => {
+        this.productos = resp
+        this.route.navigate(['/inicio/perfil/']);
+      },
+      (err) => { console.log(err) }
+    )
     console.log("eliminado")
     //redireccionar a la pagina de productos
     this.route.navigate(['/inicio/perfil/']);
