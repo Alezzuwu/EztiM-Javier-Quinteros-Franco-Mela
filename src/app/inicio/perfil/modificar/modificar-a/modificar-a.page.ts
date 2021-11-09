@@ -23,10 +23,9 @@ export class ModificarAPage implements OnInit {
 
       //llamamos al servicio y le pasamos el id
       this.inicioServicio.getProductosById(valor).subscribe(
-        (resp) => { this.productos = resp },
+        (resp: any) => { this.productos = resp },
         (err) => { console.log(err) }
       )
-
     })
   }
 

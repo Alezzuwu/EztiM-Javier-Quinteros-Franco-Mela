@@ -18,7 +18,7 @@
 
 
 <ion-list class="ion-margin-end ion-margin-start" style="background-color: #111124;">
-  <ion-item color="estim" class=" radius shadow ion-margin-bottom" *ngFor="let p of searchProducto" [routerLink]="['/inicio/' + p.id]">
+  <ion-item color="estim" class=" radius shadow ion-margin-bottom" *ngFor="let p of productos" [routerLink]="['/inicio/' + p.id]">
     <ion-thumbnail class="ion-margin-end">
       <img [src]="p.imagenURL" />
     </ion-thumbnail>

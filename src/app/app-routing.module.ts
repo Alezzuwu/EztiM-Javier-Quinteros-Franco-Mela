@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -13,25 +13,24 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    children:[
+    children: [
       {
-        path:"",
-        loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+        path: "",
+        loadChildren: () => import('./inicio/inicio.module').then(m => m.InicioPageModule)
       },
       {
-        path:":prodID",
-        loadChildren: () => import('./inicio/catalogo/detalle/detalle.module').then( m => m.DetallePageModule)
+        path: ":prodID",
+        loadChildren: () => import('./inicio/catalogo/detalle/detalle.module').then(m => m.DetallePageModule)
       },
       {
-        path:":prodID",
-        loadChildren: () => import('./inicio/perfil/eliminar/eliminar.module').then( m => m.EliminarPageModule)
+        path: ":prodID",
+        loadChildren: () => import('./inicio/perfil/eliminar/eliminar.module').then(m => m.EliminarPageModule)
       },
       {
-        path:":prodID",
-        loadChildren: () => import('./inicio/perfil/modificar/modificar-a/modificar-a.module').then( m => m.ModificarAPageModule)
+        path: ":prodID",
+        loadChildren: () => import('./inicio/perfil/modificar/modificar-a/modificar-a.module').then(m => m.ModificarAPageModule)
       }
     ]
-    
   },
 ];
 

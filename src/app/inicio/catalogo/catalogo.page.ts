@@ -11,7 +11,7 @@ import { producto } from './catalogo.model';
 export class CatalogoPage implements OnInit {
 
   productos: any = [];
-  searchProducto: any;
+  searchProducto: any = [];
   datos: producto;
 
   constructor(private inicioservicio: InicioService, private activateRoute: ActivatedRoute, private route: Router) { }
@@ -109,24 +109,15 @@ export class CatalogoPage implements OnInit {
   }
 
   ngOnInit() {
-
-    /*this.productos = this.inicioservicio.getProductos();
-    this.searchProducto = this.productos
-    console.log(this.productos)*/
-
     this.inicioservicio.getProductos().subscribe(
-      (resp) => { this.productos = resp },
+      (resp: any) => { this.productos = resp },
       (err) => { console.log(err) }
     )
   }
 
   ionViewWillEnter() {
-
-    /*this.productos = this.inicioservicio.getProductos();
-    console.log(this.productos)*/
-    
     this.inicioservicio.getProductos().subscribe(
-      (resp) => { this.productos = resp },
+      (resp: any) => { this.productos = resp },
       (err) => { console.log(err) }
     )
   }

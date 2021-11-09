@@ -10,14 +10,13 @@ import { InicioService } from '../../inicio.service';
 })
 export class EliminarPage implements OnInit {
 
-  private productos: any = []
   producto: any = [];
 
   constructor(private inicioservicio: InicioService, private route: Router) { }
 
   ngOnInit() {
     this.inicioservicio.getProductos().subscribe(
-      (resp) => { this.productos = resp },
+      (resp) => { this.producto = resp },
       (err) => { console.log(err) }
     )
   }
@@ -25,7 +24,7 @@ export class EliminarPage implements OnInit {
   eliminar(idd: string) {
     this.inicioservicio.deleteProducto(this.producto.id).subscribe(
       (resp) => {
-        this.productos = resp
+        this.producto = resp
         this.route.navigate(['/inicio/perfil/']);
       },
       (err) => { console.log(err) }

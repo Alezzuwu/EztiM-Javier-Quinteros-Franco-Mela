@@ -34,7 +34,6 @@ const routes: Routes = [
           },
         ]
       },
-
     ]
   },
 
@@ -44,4 +43,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class InicioPageRoutingModule {}
+export class InicioPageRoutingModule { }

@@ -13,18 +13,18 @@
     <ion-col>
       <ion-card color="estim">
         <ion-card-content>
-          <ion-input type="text" placeholder="Ingrese el nombre" #nombre></ion-input>
-          <ion-input type="text" placeholder="Ingrese la fecha de estreno del videojuego" #fecha></ion-input>
-          <ion-input type="text" placeholder="Ingrese el desarrollador del videojuego" #desarrollador></ion-input>
-          <ion-input type="text" placeholder="Ingrese la categoria" #categoria></ion-input>
-          <ion-input type="number" placeholder="Ingrese el precio" #precio></ion-input>
-          <ion-input type="number" placeholder="Ingrese el precio en dolares" #precioDolar></ion-input>
+          <ion-input type="text" [(ngModel)]="productos.nombre" #nombre></ion-input>
+          <ion-input type="text" [(ngModel)]="productos.fecha" #fecha></ion-input>
+          <ion-input type="text" [(ngModel)]="productos.nombre" #desarrollador></ion-input>
+          <ion-input type="text" [(ngModel)]="productos.nombre" #categoria></ion-input>
+          <ion-input type="number" [(ngModel)]="productos.nombre" #precio></ion-input>
+          <ion-input type="number" [(ngModel)]="productos.nombre" #precioDolar></ion-input>
           <ion-item color="estim">
             <ion-label>¿El juego es multijugador?</ion-label>
             <ion-checkbox slot="start" ></ion-checkbox>
           </ion-item>
-          <ion-input type="text" placeholder="Ingrese la URL de la imagen" #imagen></ion-input>
-          <ion-input type="text" placeholder="Ingrese un comentario" #comentario></ion-input>
+          <ion-input type="text" [(ngModel)]="productos.nombre" #imagen></ion-input>
+          <ion-input type="text" [(ngModel)]="productos.nombre" #comentario></ion-input>
           <ion-button class="shadow" color="btn" (click)="agregarProducto(nombre,fecha,desarrollador,categoria,precio,precioDolar,multi,imagen,comentario)">Agregar</ion-button>
         </ion-card-content>
       </ion-card>

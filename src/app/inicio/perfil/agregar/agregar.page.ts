@@ -9,6 +9,12 @@ import { InicioService } from '../../inicio.service';
 })
 export class AgregarPage implements OnInit {
 
+  public form = [
+      { val: 'Pepperoni', isChecked: true },
+      { val: 'Sausage', isChecked: false },
+      { val: 'Mushroom', isChecked: false }
+    ];
+
   constructor(private inicioServicio : InicioService, private router : Router) { }
 
   ngOnInit() {
@@ -19,8 +25,13 @@ export class AgregarPage implements OnInit {
     var lista = []
     lista.push(comentario.value)
 
-    this.inicioServicio.addproducto(nombre.value, fecha.value, desarrollador.value, categoria.value, precio.value, precioDolar.value, multi, imagen.value, lista)
-    this.router.navigate(['/inicio/catalogo'])
+    this.inicioServicio.addproducto(nombre.value, fecha.value, desarrollador.value, categoria.value,
+      precio.value, precioDolar.value, multi, imagen.value, lista).subscribe(
+        (resp : any) => { resp 
+        this.router.navigate(['/inicio/catalogo']);
+      },
+        (err) => { console.log(err) }
+      )
   }
 }
 

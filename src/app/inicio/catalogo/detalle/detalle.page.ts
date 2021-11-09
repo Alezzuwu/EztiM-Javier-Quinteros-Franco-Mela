@@ -25,7 +25,7 @@ export class DetallePage implements OnInit {
 
       //llamamos al servicio y le pasamos el id
       this.inicioservicio.getProductosById(valor).subscribe(
-        (resp) => { this.producto = resp },
+        (resp : any) => { this.producto = resp },
         (err) => { console.log(err) }
       )
 
@@ -48,10 +48,12 @@ export class DetallePage implements OnInit {
         {
           text: 'Eliminar',
           handler: () => {
-            this.inicioservicio.deleteProducto(this.producto.id);
-         
-            this.route.navigate(['/inicio/perfil/eliminar']);
-            
+            this.inicioservicio.deleteProducto(this.producto.id).subscribe(
+              (resp : any) => { this.producto = resp
+                this.route.navigate(['/inicio/catalogo'])
+              },
+              (err) => { console.log(err) }
+            );
           }
         }
       ]
